@@ -105,7 +105,13 @@ function head(socket: WebSocket) {
     let offset = 0
 
     const version = buffer[offset++]
-    const userid = stringify(buffer.subarray(offset, offset += 16))     //1,17
+    let userid: string
+    try {
+        userid = stringify(buffer.subarray(offset, offset += 16))     //1,17
+    } catch (e) {
+        socket.close()
+        return
+    }
 
     const optLength = buffer[offset++]      //17
     const optBuffer = buffer.subarray(offset, offset += optLength!)
