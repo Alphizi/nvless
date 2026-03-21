@@ -1,3 +1,6 @@
+<details>
+<summary>Старое (оригинальное описание)| Old (original) info</summary>
+
 ## nvless
 
 一个用typescript实现的只使用ws链接的vless协议服务端。
@@ -61,3 +64,6 @@ npm install
 # 启动服务
 npm run test
 ```
+
+</details>
+
